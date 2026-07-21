@@ -31,9 +31,6 @@ include __DIR__ . '/includes/header.php';
                 <?php foreach ($gallery_images as $item): ?>
                     <figure class="gallery-item fade-in">
                         <img src="<?php echo SITE_URL . '/' . htmlspecialchars($item['image']); ?>" alt="<?php echo htmlspecialchars($item['alt_text'] ?: $item['title']); ?>">
-                        <?php if (!empty($item['title'])): ?>
-                            <figcaption><?php echo htmlspecialchars($item['title']); ?></figcaption>
-                        <?php endif; ?>
                     </figure>
                 <?php endforeach; ?>
             </div>

@@ -66,23 +66,11 @@ $settings = getAllSettings();
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <?php
-                        $footer_services = getActiveServices(6);
-                        if (!empty($footer_services)):
-                            foreach ($footer_services as $fs):
-                        ?>
-                            <li><a href="<?php echo SITE_URL . '/service/' . htmlspecialchars($fs['slug'] ?? generateSlug($fs['title'])); ?>"><?php echo htmlspecialchars($fs['title']); ?></a></li>
-                        <?php
-                            endforeach;
-                        else:
-                        ?>
-                            <li><a href="<?php echo SITE_URL; ?>/services">Guided Meditation</a></li>
-                            <li><a href="<?php echo SITE_URL; ?>/services">Mindfulness Training</a></li>
-                            <li><a href="<?php echo SITE_URL; ?>/services">Spiritual Counselling</a></li>
-                            <li><a href="<?php echo SITE_URL; ?>/services">Holistic Therapy</a></li>
-                            <li><a href="<?php echo SITE_URL; ?>/services">Yoga & Wellness</a></li>
-                            <li><a href="<?php echo SITE_URL; ?>/services">Inner Peace Workshops</a></li>
-                        <?php endif; ?>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Personal Counselling</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Breathing & Meditation Practices</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Yoga Training Sessions</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">One-on-One Personal Training</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Online Personal Counselling, Meditation & Yoga Classes</a></li>
                     </ul>
                 </div>
 

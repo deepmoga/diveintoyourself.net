@@ -84,6 +84,21 @@ include __DIR__ . '/includes/header.php';
             </div>
         </div>
     </section>
+
+    <section class="home-services-brief" id="services">
+        <div class="container">
+            <div class="home-section-head">
+                <h2>SERVICES</h2>
+            </div>
+            <div class="home-service-list">
+                <div><i class="fas fa-comments"></i><span>Personal Counselling</span></div>
+                <div><i class="fas fa-wind"></i><span>Breathing & Meditation Practices</span></div>
+                <div><i class="fas fa-spa"></i><span>Yoga Training Sessions</span></div>
+                <div><i class="fas fa-dumbbell"></i><span>One-on-One Personal Training</span></div>
+                <div><i class="fas fa-video"></i><span>Online Personal Counselling, Meditation & Yoga Classes</span></div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

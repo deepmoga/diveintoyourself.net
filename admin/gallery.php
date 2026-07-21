@@ -29,7 +29,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $editId = (int)($_POST['id'] ?? 0);
 
     $image = null;
-    if (!empty($_FILES['image']['tmp_name'])) {
+    $uploadedImages = [];
+    if (!empty($_FILES['images']['tmp_name'][0]) && $editId === 0) {
+        $totalImages = count($_FILES['images']['tmp_name']);
+        for ($i = 0; $i < $totalImages; $i++) {
+            if (empty($_FILES['images']['tmp_name'][$i])) {
+                continue;
+            }
+            $singleFile = [
+                'name' => $_FILES['images']['name'][$i],
+                'type' => $_FILES['images']['type'][$i],
+                'tmp_name' => $_FILES['images']['tmp_name'][$i],
+                'error' => $_FILES['images']['error'][$i],
+                'size' => $_FILES['images']['size'][$i],
+            ];
+            $uploaded = uploadImage($singleFile, 'gallery');
+            if ($uploaded) {
+                $uploadedImages[] = $uploaded;
+            }
+        }
+    } elseif (!empty($_FILES['image']['tmp_name'])) {
         $image = uploadImage($_FILES['image'], 'gallery');
     }
 
@@ -44,14 +63,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$title, $image, $alt_text, $sort_order, $status, $editId]);
         setFlash('success', 'Gallery image updated successfully.');
     } else {
-        if (!$image) {
+        if (empty($uploadedImages) && !$image) {
             setFlash('error', 'Please upload an image.');
             header('Location: ' . ADMIN_URL . '/gallery.php?action=add');
             exit;
         }
         $stmt = $db->prepare("INSERT INTO gallery_images (title, image, alt_text, sort_order, status) VALUES (?,?,?,?,?)");
-        $stmt->execute([$title, $image, $alt_text, $sort_order, $status]);
-        setFlash('success', 'Gallery image added successfully.');
+        if (!empty($uploadedImages)) {
+            foreach ($uploadedImages as $index => $galleryImage) {
+                $stmt->execute([$title, $galleryImage, $alt_text, $sort_order + $index, $status]);
+            }
+            setFlash('success', count($uploadedImages) . ' gallery images added successfully.');
+        } else {
+            $stmt->execute([$title, $image, $alt_text, $sort_order, $status]);
+            setFlash('success', 'Gallery image added successfully.');
+        }
     }
     header('Location: ' . ADMIN_URL . '/gallery.php');
     exit;
@@ -82,20 +108,24 @@ include __DIR__ . '/includes/header.php';
             <input type="hidden" name="id" value="<?= $item['id'] ?? 0 ?>">
 
             <div class="form-group">
-                <label>Title <span class="required">*</span></label>
-                <input type="text" name="title" class="form-control" value="<?= htmlspecialchars($item['title'] ?? '') ?>" required>
+                <label>Title</label>
+                <input type="text" name="title" class="form-control" value="<?= htmlspecialchars($item['title'] ?? '') ?>">
             </div>
 
             <div class="form-group">
-                <label>Image <?= $action === 'add' ? '<span class="required">*</span>' : '' ?></label>
+                <label><?= $action === 'add' ? 'Images <span class="required">*</span>' : 'Image' ?></label>
                 <?php if (!empty($item['image'])): ?>
                     <div class="current-image">
                         <p>Current:</p>
                         <div class="image-preview"><img src="<?= SITE_URL ?>/<?= $item['image'] ?>" id="image_preview"></div>
                     </div>
                 <?php endif; ?>
-                <input type="file" name="image" class="form-control" accept="image/*" data-preview="image_preview" <?= $action === 'add' ? 'required' : '' ?>>
-                <?php if (empty($item['image'])): ?>
+                <?php if ($action === 'add'): ?>
+                    <input type="file" name="images[]" class="form-control" accept="image/*" multiple required>
+                <?php else: ?>
+                    <input type="file" name="image" class="form-control" accept="image/*" data-preview="image_preview">
+                <?php endif; ?>
+                <?php if (empty($item['image']) && $action === 'edit'): ?>
                     <div class="image-preview"><img id="image_preview" style="display:none;"></div>
                 <?php endif; ?>
             </div>

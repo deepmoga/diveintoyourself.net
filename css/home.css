@@ -157,6 +157,21 @@
     padding: 78px 0;
 }
 
+.home-meaning-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-meaning-section::before {
+    content: '';
+    position: absolute;
+    inset: 44px auto auto 6%;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(10,157,174,0.16);
+    border-radius: 50%;
+}
+
 .home-section-head {
     max-width: 720px;
     margin: 0 auto 34px;
@@ -178,10 +193,22 @@
 }
 
 .home-story-card {
+    position: relative;
     max-width: 900px;
     margin: 0 auto 26px;
-    padding: 34px;
+    padding: 38px 42px;
     border-radius: 24px;
+}
+
+.home-story-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 28px;
+    bottom: 28px;
+    width: 5px;
+    border-radius: 0 5px 5px 0;
+    background: linear-gradient(180deg, #0a9dae, #f0d49a);
 }
 
 .home-story-card-after {
@@ -207,12 +234,26 @@
 .home-practice-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 22px;
 }
 
 .home-practice-card {
-    padding: 28px;
+    position: relative;
+    padding: 30px;
     border-radius: 22px;
+    overflow: hidden;
+}
+
+.home-practice-card::after,
+.home-service-list div::after {
+    content: '';
+    position: absolute;
+    right: -34px;
+    bottom: -34px;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: rgba(10,157,174,0.08);
 }
 
 .home-practice-card i {
@@ -255,7 +296,9 @@
 }
 
 .home-inward-section {
-    background: linear-gradient(180deg, #f3f8f5 0%, #fbfcfb 100%);
+    background:
+        linear-gradient(135deg, rgba(23,51,48,0.94), rgba(81,48,111,0.92)),
+        linear-gradient(180deg, #f3f8f5 0%, #fbfcfb 100%);
 }
 
 .home-inward-grid {
@@ -272,6 +315,13 @@
     border-radius: 26px;
 }
 
+.home-inward-card,
+.home-points-card {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 22px 64px rgba(0,0,0,0.18);
+}
+
 .home-inward-card .home-eyebrow,
 .home-journey-card .home-eyebrow {
     color: #0a9dae;
@@ -283,6 +333,17 @@
     font-size: 2.35rem;
     line-height: 1.15;
     margin-bottom: 16px;
+}
+
+.home-inward-card h2,
+.home-inward-card p,
+.home-points-card p {
+    color: #fff;
+}
+
+.home-inward-card p,
+.home-points-card p {
+    color: rgba(255,255,255,0.86);
 }
 
 .home-points-card ul {
@@ -306,14 +367,16 @@
 }
 
 .home-journey-section {
-    padding-top: 20px;
+    padding-top: 72px;
 }
 
 .home-journey-card {
     max-width: 940px;
     margin: 0 auto;
     text-align: center;
-    background: linear-gradient(135deg, #173330, #0a8191);
+    background:
+        radial-gradient(circle at 86% 10%, rgba(240,212,154,0.22), transparent 28%),
+        linear-gradient(135deg, #173330, #0a8191);
 }
 
 .home-journey-card h2,
@@ -356,12 +419,14 @@
 }
 
 .home-service-list div {
+    position: relative;
     min-height: 150px;
     padding: 22px;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
