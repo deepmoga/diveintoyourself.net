@@ -1155,7 +1155,7 @@ ul {
 }
 
 .about-story-section {
-    padding: 100px 0;
+    padding: 80px 0 46px;
     background: linear-gradient(180deg, #f3f8f5 0%, #fbfcfb 100%);
 }
 
@@ -1179,10 +1179,12 @@ ul {
 }
 
 .about-story-copy {
+    max-width: 980px;
+    margin: 0 auto;
     background: #fff;
     border: 1px solid #e4ede9;
     border-radius: 24px;
-    padding: 40px;
+    padding: 46px;
     box-shadow: 0 18px 54px rgba(23,51,48,0.08);
 }
 
@@ -1208,8 +1210,18 @@ ul {
     display: block;
 }
 
+.about-signature strong {
+    color: #173330;
+    font-size: 1.1rem;
+}
+
+.about-certificate-section {
+    padding: 38px 0 100px;
+    background: #fbfcfb;
+}
+
 .about-certificate-panel {
-    max-width: 720px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 16px;
     background: #fff;
@@ -2058,7 +2070,7 @@ ul {
 
 @media (max-width: 768px) {
     .about-story-section {
-        padding: 70px 0;
+        padding: 56px 0 34px;
     }
 
     .about-story-copy {
