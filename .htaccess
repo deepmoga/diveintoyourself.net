@@ -24,6 +24,7 @@ RewriteRule ^about$ about.php [L]
 RewriteRule ^services$ services.php [L]
 RewriteRule ^gallery$ gallery.php [L]
 RewriteRule ^blogs$ blogs.php [L]
+RewriteRule ^certificate$ certificate.php [L]
 RewriteRule ^contact$ contact.php [L]
 
 # Remove .php extension

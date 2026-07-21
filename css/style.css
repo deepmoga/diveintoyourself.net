@@ -1266,11 +1266,19 @@ ul {
 }
 
 .service-clean-card {
+    display: block;
     background: #fff;
     border: 1px solid #e4ede9;
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 14px 46px rgba(23,51,48,0.08);
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-clean-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 56px rgba(23,51,48,0.13);
 }
 
 .service-clean-card i {
@@ -1292,6 +1300,16 @@ ul {
 
 .service-clean-card p {
     color: #61746f;
+    line-height: 1.75;
+}
+
+.service-clean-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    color: #0a9dae;
+    font-weight: 700;
 }
 
 .service-clean-card.featured {
@@ -1305,7 +1323,8 @@ ul {
 }
 
 .service-clean-card.featured h3,
-.service-clean-card.featured p {
+.service-clean-card.featured p,
+.service-clean-card.featured .service-clean-link {
     color: #fff;
 }
 

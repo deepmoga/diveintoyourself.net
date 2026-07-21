@@ -3,6 +3,7 @@ require_once __DIR__ . '/includes/functions.php';
 
 $page_slug = 'services';
 $settings = getAllSettings();
+$services = getActiveServices();
 
 include __DIR__ . '/includes/header.php';
 ?>
@@ -28,31 +29,14 @@ include __DIR__ . '/includes/header.php';
             </div>
 
             <div class="services-clean-grid">
-                <div class="service-clean-card">
-                    <i class="fas fa-comments"></i>
-                    <h3>Personal Counselling</h3>
-                    <p>Supportive one-on-one conversations to understand yourself, your emotions, and your relationships with more clarity.</p>
-                </div>
-                <div class="service-clean-card">
-                    <i class="fas fa-wind"></i>
-                    <h3>Breathing & Meditation Practices</h3>
-                    <p>Simple, steady practices designed to calm the nervous system, sharpen awareness, and create inner quiet.</p>
-                </div>
-                <div class="service-clean-card">
-                    <i class="fas fa-spa"></i>
-                    <h3>Yoga Training Sessions</h3>
-                    <p>Guided yoga sessions focused on flexibility, balance, strength, posture, and mindful movement.</p>
-                </div>
-                <div class="service-clean-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>One-on-One Personal Training</h3>
-                    <p>Personalized fitness and movement guidance tailored to your body, comfort level, and long-term wellbeing.</p>
-                </div>
-                <div class="service-clean-card featured">
-                    <i class="fas fa-video"></i>
-                    <h3>Online Personal Counselling, Meditation & Yoga Classes</h3>
-                    <p>Flexible online sessions for people who want personal guidance from home or while travelling.</p>
-                </div>
+                <?php foreach ($services as $index => $service): ?>
+                <a class="service-clean-card <?php echo $index === 4 ? 'featured' : ''; ?>" href="<?php echo SITE_URL . '/service/' . htmlspecialchars($service['slug'] ?? generateSlug($service['title'])); ?>">
+                    <i class="<?php echo htmlspecialchars($service['icon'] ?? 'fas fa-spa'); ?>"></i>
+                    <h3><?php echo htmlspecialchars($service['title']); ?></h3>
+                    <p><?php echo htmlspecialchars($service['description']); ?></p>
+                    <span class="service-clean-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <?php endforeach; ?>
             </div>
 
             <div class="services-page-image">

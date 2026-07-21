@@ -86,22 +86,23 @@ $site_address = $settings['address'] ?? '';
             <img src="<?php echo SITE_URL . '/' . htmlspecialchars($logo); ?>" alt="<?php echo htmlspecialchars($site_name); ?> - Best Meditation Centre" title="<?php echo htmlspecialchars($site_name); ?>">
         </a>
 
+        <?php $nav_services = getActiveServices(5); ?>
         <nav class="nav-menu" id="navMenu">
             <a href="<?php echo SITE_URL; ?>/" <?php echo ($page_slug ?? '') === 'home' ? 'class="active"' : ''; ?>>Home</a>
             <a href="<?php echo SITE_URL; ?>/about" <?php echo ($page_slug ?? '') === 'about' ? 'class="active"' : ''; ?>>About Us</a>
             <div class="nav-dropdown">
                 <a href="<?php echo SITE_URL; ?>/services" <?php echo ($page_slug ?? '') === 'services' ? 'class="active"' : ''; ?>>Our Services <i class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-menu">
-                    <a href="<?php echo SITE_URL; ?>/services"><i class="fas fa-comments"></i>Personal Counselling</a>
-                    <a href="<?php echo SITE_URL; ?>/services"><i class="fas fa-wind"></i>Breathing & Meditation Practices</a>
-                    <a href="<?php echo SITE_URL; ?>/services"><i class="fas fa-spa"></i>Yoga Training Sessions</a>
-                    <a href="<?php echo SITE_URL; ?>/services"><i class="fas fa-dumbbell"></i>One-on-One Personal Training</a>
-                    <a href="<?php echo SITE_URL; ?>/services"><i class="fas fa-video"></i>Online Personal Counselling, Meditation & Yoga Classes</a>
+                    <?php foreach ($nav_services as $ns): ?>
+                    <a href="<?php echo SITE_URL . '/service/' . htmlspecialchars($ns['slug'] ?? generateSlug($ns['title'])); ?>">
+                        <i class="<?php echo htmlspecialchars($ns['icon'] ?? 'fas fa-spa'); ?>"></i><?php echo htmlspecialchars($ns['title']); ?>
+                    </a>
+                    <?php endforeach; ?>
                     <a href="<?php echo SITE_URL; ?>/services" class="dropdown-all">View All Services <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <a href="<?php echo SITE_URL; ?>/gallery" <?php echo ($page_slug ?? '') === 'gallery' ? 'class="active"' : ''; ?>>Gallery</a>
-            <a href="<?php echo SITE_URL; ?>/blogs" <?php echo ($page_slug ?? '') === 'blogs' ? 'class="active"' : ''; ?>>Blogs</a>
+            <a href="<?php echo SITE_URL; ?>/certificate" <?php echo ($page_slug ?? '') === 'certificate' ? 'class="active"' : ''; ?>>Certificate</a>
             <a href="<?php echo SITE_URL; ?>/contact" <?php echo ($page_slug ?? '') === 'contact' ? 'class="active"' : ''; ?>>Contact</a>
         </nav>
 

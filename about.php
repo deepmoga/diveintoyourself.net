@@ -34,13 +34,6 @@ include __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="about-certificate-section">
-        <div class="container">
-            <div class="about-certificate-panel">
-                <img src="<?php echo SITE_URL; ?>/images/home/yoga-certificate.jpeg" alt="Yoga teacher certification for Manpreet Singh Sangha">
-            </div>
-        </div>
-    </section>
 </main>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
