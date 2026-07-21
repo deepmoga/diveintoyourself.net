@@ -58,8 +58,6 @@ $settings = getAllSettings();
                         <li><a href="<?php echo SITE_URL; ?>/services">Our Services</a></li>
                         <li><a href="<?php echo SITE_URL; ?>/gallery">Gallery</a></li>
                         <li><a href="<?php echo SITE_URL; ?>/blogs">Blogs</a></li>
-                        <li><a href="<?php echo SITE_URL; ?>/#why-us">Why Choose Us</a></li>
-                        <li><a href="<?php echo SITE_URL; ?>/#testimonials">Testimonials</a></li>
                         <li><a href="<?php echo SITE_URL; ?>/contact">Contact Us</a></li>
                     </ul>
                 </div>
