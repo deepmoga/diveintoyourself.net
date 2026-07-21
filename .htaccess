@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteBase /Github/Dive/
+RewriteBase /
+Options +ExecCGI
 
 # Don't rewrite admin paths
 RewriteRule ^admin(/.*)?$ - [L]
