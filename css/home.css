@@ -86,7 +86,11 @@
 
 .home-credential,
 .home-mini-photo,
-.home-pdf-card,
+.home-story-card,
+.home-practice-card,
+.home-inward-card,
+.home-points-card,
+.home-journey-card,
 .home-about-card,
 .home-service-list div,
 .home-photo-grid figure {
@@ -144,7 +148,9 @@
     border-radius: 16px;
 }
 
-.home-pdf-section,
+.home-meaning-section,
+.home-inward-section,
+.home-journey-section,
 .home-about-brief,
 .home-services-brief,
 .home-photo-section {
@@ -171,26 +177,142 @@
     line-height: 1.8;
 }
 
-.home-pdf-card {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 12px;
+.home-story-card {
+    max-width: 900px;
+    margin: 0 auto 26px;
+    padding: 34px;
+    border-radius: 24px;
+}
+
+.home-story-card p {
+    color: #4f625d;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+
+.home-story-card p:last-child {
+    margin-bottom: 0;
+}
+
+.home-story-card strong {
+    color: #173330;
+}
+
+.home-practice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.home-practice-card {
+    padding: 28px;
     border-radius: 22px;
 }
 
-.home-pdf-card object,
-.home-pdf-card iframe {
-    width: 100%;
-    height: 520px;
-    border: 0;
-    display: block;
-    border-radius: 14px;
+.home-practice-card i {
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #eaf5f2;
+    color: #0a9dae;
+    font-size: 1.15rem;
+    margin-bottom: 18px;
 }
 
-.home-center-action {
-    display: flex;
-    justify-content: center;
-    margin-top: 22px;
+.home-story-card h3,
+.home-practice-card h3,
+.home-points-card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #173330;
+    font-size: 1.22rem;
+}
+
+.home-story-card h3 {
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+}
+
+.home-practice-card p,
+.home-inward-card p,
+.home-points-card li,
+.home-journey-card p {
+    color: #61746f;
+    line-height: 1.82;
+}
+
+.home-inward-section {
+    background: linear-gradient(180deg, #f3f8f5 0%, #fbfcfb 100%);
+}
+
+.home-inward-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.home-inward-card,
+.home-points-card,
+.home-journey-card {
+    padding: 36px;
+    border-radius: 26px;
+}
+
+.home-inward-card .home-eyebrow,
+.home-journey-card .home-eyebrow {
+    color: #0a9dae;
+}
+
+.home-inward-card h2,
+.home-journey-card h2 {
+    color: #173330;
+    font-size: 2.35rem;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.home-points-card ul {
+    margin-top: 18px;
+}
+
+.home-points-card li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 14px;
+}
+
+.home-points-card li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #0a9dae;
+}
+
+.home-journey-section {
+    padding-top: 20px;
+}
+
+.home-journey-card {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, #173330, #0a8191);
+}
+
+.home-journey-card h2,
+.home-journey-card p {
+    color: #fff;
+}
+
+.home-journey-card p {
+    color: rgba(255,255,255,0.86);
 }
 
 .home-about-brief {
@@ -272,7 +394,7 @@
 
 .home-photo-grid img {
     width: 100%;
-    height: 220px;
+    height: 190px;
     object-fit: cover;
 }
 
@@ -308,16 +430,18 @@
         font-size: 2.35rem;
     }
 
-    .home-pdf-section,
+    .home-meaning-section,
+    .home-inward-section,
+    .home-journey-section,
     .home-about-brief,
     .home-services-brief,
     .home-photo-section {
         padding: 56px 0;
     }
 
-    .home-pdf-card object,
-    .home-pdf-card iframe {
-        height: 430px;
+    .home-practice-grid,
+    .home-inward-grid {
+        grid-template-columns: 1fr;
     }
 
     .home-photo-grid {
@@ -325,7 +449,7 @@
     }
 
     .home-photo-grid img {
-        height: 210px;
+        height: 180px;
     }
 }
 

@@ -15,7 +15,7 @@ include __DIR__ . '/includes/header.php';
                 <h1>Understand Yourself. Find Calm. Live Better.</h1>
                 <p>Personal counselling, breathing practices, meditation, yoga, and one-on-one support with Manpreet Singh Sangha.</p>
                 <div class="home-hero-actions">
-                    <a href="#document" class="btn btn-secondary">View PDF <i class="fas fa-file-pdf"></i></a>
+                    <a href="#meaning" class="btn btn-secondary">Start Inward <i class="fas fa-arrow-right"></i></a>
                     <a href="#services" class="btn btn-outline">Services <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -34,20 +34,67 @@ include __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="home-pdf-section" id="document">
+    <section class="home-meaning-section" id="meaning">
         <div class="container">
             <div class="home-section-head">
-                <span class="home-eyebrow">Profile Document</span>
-                <h2>Attached PDF</h2>
-                <p>The PDF is available below. Open it in a new tab for a larger view.</p>
+                <span class="home-eyebrow">Rediscovering the Wonders Within</span>
+                <h2>Dive Into Yourself: Rediscovering the Wonders Within</h2>
+                <p>In a world that is always nudging us to look outward, it is easy to forget that some of the greatest treasures lie within.</p>
             </div>
-            <div class="home-pdf-card">
-                <object data="<?php echo SITE_URL; ?>/files/docx-002.pdf" type="application/pdf">
-                    <iframe src="<?php echo SITE_URL; ?>/files/docx-002.pdf" title="Dive Into Yourself PDF"></iframe>
-                </object>
+
+            <div class="home-story-card">
+                <h3>What Does It Mean to "Dive Into Yourself"?</h3>
+                <p><strong>Dive into yourself</strong> is more than just a phrase; it is an invitation to embark on a personal voyage of self-exploration, guided by no one but yourself.</p>
+                <p>At Dive Into Yourself, we offer a gentle compass for your journey inward. These practices are designed to help you peel away life's noise and reconnect with your inner core - your truest, most peaceful self.</p>
             </div>
-            <div class="home-center-action">
-                <a href="<?php echo SITE_URL; ?>/files/docx-002.pdf" class="btn btn-primary" target="_blank">Open PDF <i class="fas fa-up-right-from-square"></i></a>
+
+            <div class="home-practice-grid">
+                <article class="home-practice-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Yoga</h3>
+                    <p>Move beyond the physical poses to explore the subtle energies and stillness within your body.</p>
+                </article>
+                <article class="home-practice-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Breathing Meditation</h3>
+                    <p>Discover how a few conscious breaths can quiet the mind and open the door to self-understanding.</p>
+                </article>
+                <article class="home-practice-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Personal Counselling</h3>
+                    <p>Connect one-on-one to unravel your thoughts, emotions, and patterns, and reconnect with your original self.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-inward-section">
+        <div class="container">
+            <div class="home-inward-grid">
+                <div class="home-inward-card">
+                    <span class="home-eyebrow">Why Look Inward?</span>
+                    <h2>Reverse the search for happiness.</h2>
+                    <p>Many of us chase happiness in places or things, only to find it elusive. "Dive into yourself" is an invitation to reverse that search. It is about getting quiet, tuning in, and noticing the contentment that has always been within reach.</p>
+                </div>
+                <div class="home-points-card">
+                    <h3>This journey helps you:</h3>
+                    <ul>
+                        <li>Reconnect with your original, unfiltered self.</li>
+                        <li>Remember who you are beneath roles, routines, and expectations.</li>
+                        <li>Carry a sense of peace even when life outside feels chaotic.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-journey-section">
+        <div class="container">
+            <div class="home-journey-card">
+                <span class="home-eyebrow">Join the Journey</span>
+                <h2>Make space for a small inward dive.</h2>
+                <p>Whether that means rolling out your yoga mat, sitting quietly with your breath, or having a compassionate conversation with yourself, you might be surprised by what you find when you listen inwards instead of outwards.</p>
+                <p>Together, let's rediscover the wonder within, honor our individuality, and nurture a foundation of peace that radiates outward into the world.</p>
             </div>
         </div>
     </section>
