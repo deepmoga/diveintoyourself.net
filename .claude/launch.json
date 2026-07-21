@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dive-site",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["-S", "localhost:8080", "-t", "E:/Xampp-New-2/htdocs/Github/Dive"],
+      "port": 8080
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+<?php
+require_once __DIR__ . '/includes/functions.php';
+
+$page_slug = 'home';
+$settings = getAllSettings();
+
+include __DIR__ . '/includes/header.php';
+?>
+
+<!-- ============================================
+     HERO SECTION
+     ============================================ -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <?php if (!empty($settings['hero_image'])): ?>
+            <img src="<?php echo SITE_URL . '/' . htmlspecialchars($settings['hero_image']); ?>" alt="Hero Background">
+        <?php else: ?>
+            <div class="placeholder-img placeholder-mixed"></div>
+        <?php endif; ?>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles"></div>
+
+    <!-- Mandala Decorations -->
+    <div class="mandala-decoration mandala-1"></div>
+    <div class="mandala-decoration mandala-2"></div>
+
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-label"><?php echo htmlspecialchars($settings['hero_label'] ?? 'Welcome to Dive Into Yourself'); ?></span>
+            <h1 style="font-size: 60px;"><?php echo htmlspecialchars(html_entity_decode($settings['hero_title'] ?? 'Harmonising Your', ENT_QUOTES)); ?> <span><?php echo htmlspecialchars(html_entity_decode($settings['hero_highlight'] ?? 'Inner Self', ENT_QUOTES)); ?></span> <?php echo htmlspecialchars(html_entity_decode($settings['hero_title2'] ?? '& Your Body', ENT_QUOTES)); ?></h1>
+            <p><?php echo htmlspecialchars($settings['hero_description'] ?? 'Embark on the best professional journey of self-discovery and inner peace. Our top-rated meditation and mindfulness programs help you look inward beyond the physical form — finding the peace that resides within you.'); ?></p>
+            <div class="hero-buttons">
+                <a href="<?php echo htmlspecialchars($settings['hero_btn_link'] ?? SITE_URL . '/about'); ?>" class="btn btn-secondary"><?php echo htmlspecialchars($settings['hero_btn_text'] ?? 'Get Started'); ?> <i class="fas fa-arrow-right"></i></a>
+                <a href="<?php echo htmlspecialchars($settings['hero_btn2_link'] ?? SITE_URL . '/services'); ?>" class="btn btn-outline"><?php echo htmlspecialchars($settings['hero_btn2_text'] ?? 'Our Services'); ?> <i class="fas fa-play-circle"></i></a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3><span class="counter" data-target="<?php echo htmlspecialchars($settings['hero_stat1_number'] ?? '500'); ?>" data-suffix="<?php echo htmlspecialchars($settings['hero_stat1_suffix'] ?? '+'); ?>">0</span></h3>
+                    <p><?php echo htmlspecialchars($settings['hero_stat1_label'] ?? 'Happy Members'); ?></p>
+                </div>
+                <div class="hero-stat">
+                    <h3><span class="counter" data-target="<?php echo htmlspecialchars($settings['hero_stat2_number'] ?? '15'); ?>" data-suffix="<?php echo htmlspecialchars($settings['hero_stat2_suffix'] ?? '+'); ?>">0</span></h3>
+                    <p><?php echo htmlspecialchars($settings['hero_stat2_label'] ?? 'Expert Instructors'); ?></p>
+                </div>
+                <div class="hero-stat">
+                    <h3><span class="counter" data-target="<?php echo htmlspecialchars($settings['hero_stat3_number'] ?? '30'); ?>" data-suffix="<?php echo htmlspecialchars($settings['hero_stat3_suffix'] ?? '+'); ?>">0</span></h3>
+                    <p><?php echo htmlspecialchars($settings['hero_stat3_label'] ?? 'Professional Programs'); ?></p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-wrapper">
+                <?php if (!empty($settings['hero_image'])): ?>
+                    <img src="<?php echo SITE_URL . '/' . htmlspecialchars($settings['hero_image']); ?>" alt="<?php echo htmlspecialchars($settings['site_name'] ?? 'Dive Into Yourself'); ?>" class="main-img">
+                <?php else: ?>
+                    <div class="main-img placeholder-img placeholder-purple">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     ABOUT SECTION
+     ============================================ -->
+<section class="section about-section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <!-- About Image -->
+            <div class="about-image fade-in-left">
+                <div class="about-image-main">
+                    <?php if (!empty($settings['about_image'])): ?>
+                        <img src="<?php echo SITE_URL . '/' . htmlspecialchars($settings['about_image']); ?>" alt="About Us" style="height:450px; object-fit:cover;">
+                    <?php else: ?>
+                        <div class="placeholder-img placeholder-teal" style="height:450px;">
+                            <i class="fas fa-om"></i>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="about-image-float">
+                    <?php if (!empty($settings['about_image2'])): ?>
+                        <img src="<?php echo SITE_URL . '/' . htmlspecialchars($settings['about_image2']); ?>" alt="About Us" style="height:200px; object-fit:cover;">
+                    <?php else: ?>
+                        <div class="placeholder-img placeholder-purple" style="height:200px;">
+                            <i class="fas fa-lotus"></i>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="about-experience">
+                    <h3><span class="counter" data-target="<?php echo htmlspecialchars($settings['about_exp_number'] ?? '10'); ?>" data-suffix="<?php echo htmlspecialchars($settings['about_exp_suffix'] ?? '+'); ?>">0</span></h3>
+                    <p><?php echo nl2br(htmlspecialchars($settings['about_exp_label'] ?? "Years of\nExcellence")); ?></p>
+                </div>
+            </div>
+
+            <!-- About Content -->
+            <div class="about-content fade-in-right">
+                <span class="sub-title"><?php echo htmlspecialchars($settings['about_subtitle'] ?? 'Who We Are'); ?></span>
+                <h2><?php echo $settings['about_title'] ?? 'Discover the Best Path to <span>Inner Peace</span> & Self-Discovery'; ?></h2>
+                <p><?php echo htmlspecialchars($settings['about_text1'] ?? 'Dive Into Yourself is about gaining a deeper understanding of this beautifully created wonderful piece of creation and looking inwards beyond the physical form of the body — the gender, colour, height, weight, and age.'); ?></p>
+                <p><?php echo htmlspecialchars($settings['about_text2'] ?? 'Diving into yourself is also about finding the peace inward which we normally seek outward and find it nowhere, but yet we forget to look inwards. Our professional and experienced team of instructors guide you through this transformative journey with the best holistic wellness practices.'); ?></p>
+
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="<?php echo htmlspecialchars($settings['about_feature1_icon'] ?? 'fas fa-brain'); ?>"></i>
+                        </div>
+                        <div>
+                            <h4><?php echo htmlspecialchars($settings['about_feature1_title'] ?? 'Mindfulness'); ?></h4>
+                            <p><?php echo htmlspecialchars($settings['about_feature1_text'] ?? 'Top mindfulness practices for clarity and awareness'); ?></p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="<?php echo htmlspecialchars($settings['about_feature2_icon'] ?? 'fas fa-hand-holding-heart'); ?>"></i>
+                        </div>
+                        <div>
+                            <h4><?php echo htmlspecialchars($settings['about_feature2_title'] ?? 'Holistic Therapy'); ?></h4>
+                            <p><?php echo htmlspecialchars($settings['about_feature2_text'] ?? 'Best therapeutic approaches for complete well-being'); ?></p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="<?php echo htmlspecialchars($settings['about_feature3_icon'] ?? 'fas fa-spa'); ?>"></i>
+                        </div>
+                        <div>
+                            <h4><?php echo htmlspecialchars($settings['about_feature3_title'] ?? 'Deep Relaxation'); ?></h4>
+                            <p><?php echo htmlspecialchars($settings['about_feature3_text'] ?? 'Professional techniques for profound inner calm'); ?></p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="<?php echo htmlspecialchars($settings['about_feature4_icon'] ?? 'fas fa-praying-hands'); ?>"></i>
+                        </div>
+                        <div>
+                            <h4><?php echo htmlspecialchars($settings['about_feature4_title'] ?? 'Spiritual Growth'); ?></h4>
+                            <p><?php echo htmlspecialchars($settings['about_feature4_text'] ?? 'Top guided paths to spiritual awakening'); ?></p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="<?php echo htmlspecialchars($settings['about_btn_link'] ?? SITE_URL . '/services'); ?>" class="btn btn-primary"><?php echo htmlspecialchars($settings['about_btn_text'] ?? 'Explore Our Services'); ?> <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SERVICES SECTION
+     ============================================ -->
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="sub-title"><?php echo htmlspecialchars($settings['services_subtitle'] ?? 'What We Offer'); ?></span>
+            <h2><?php echo $settings['services_title'] ?? 'Our Best Professional <span>Services</span>'; ?></h2>
+            <p><?php echo htmlspecialchars($settings['services_description'] ?? 'Explore our top-rated wellness programs designed to guide you on the best journey of self-discovery, inner healing, and spiritual transformation.'); ?></p>
+        </div>
+
+        <div class="services-grid">
+            <?php
+            $services = getActiveServices(6);
+            if (!empty($services)):
+                $delay = 0;
+                foreach ($services as $service):
+                    $delay = ($delay % 3) + 1;
+                    $placeholders = ['placeholder-purple', 'placeholder-teal', 'placeholder-warm', 'placeholder-cool', 'placeholder-nature', 'placeholder-mixed'];
+                    $placeholder_class = $placeholders[($delay - 1) % count($placeholders)];
+            ?>
+                <div class="service-card fade-in delay-<?php echo $delay; ?>">
+                    <div class="service-card-image">
+                        <?php if (!empty($service['image'])): ?>
+                            <img src="<?php echo SITE_URL . '/' . htmlspecialchars($service['image']); ?>" alt="<?php echo htmlspecialchars($service['title']); ?>" style="height:220px; object-fit:cover;">
+                        <?php else: ?>
+                            <div class="placeholder-img <?php echo $placeholder_class; ?>" style="height:220px;">
+                                <i class="<?php echo htmlspecialchars($service['icon'] ?? 'fas fa-spa'); ?>"></i>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="service-card-body">
+                        <h3><?php echo htmlspecialchars($service['title']); ?></h3>
+                        <p><?php echo htmlspecialchars($service['description']); ?></p>
+                        <a href="<?php echo SITE_URL . '/service/' . htmlspecialchars($service['slug'] ?? generateSlug($service['title'])); ?>" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            <?php
+                endforeach;
+            else:
+            ?>
+                <!-- Fallback if no services in DB -->
+                <div class="service-card fade-in delay-1">
+                    <div class="service-card-image">
+                        <div class="placeholder-img placeholder-purple" style="height:220px;"><i class="fas fa-brain"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Guided Meditation</h3>
+                        <p>Experience the best professional guided meditation sessions that lead you deep within, helping you find clarity, calm, and a profound connection with your true self.</p>
+                        <a href="<?php echo SITE_URL; ?>/services" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     STATS SECTION
+     ============================================ -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <?php
+            $stats = getStats();
+            if (!empty($stats)):
+                $delay = 0;
+                foreach ($stats as $stat):
+                    $delay++;
+            ?>
+                <div class="stat-item fade-in delay-<?php echo $delay; ?>">
+                    <div class="stat-icon"><i class="<?php echo htmlspecialchars($stat['icon'] ?? 'fas fa-star'); ?>"></i></div>
+                    <h3><span class="counter" data-target="<?php echo htmlspecialchars($stat['number'] ?? '0'); ?>" data-suffix="<?php echo htmlspecialchars($stat['suffix'] ?? ''); ?>">0</span></h3>
+                    <p><?php echo htmlspecialchars($stat['label'] ?? ''); ?></p>
+                </div>
+            <?php
+                endforeach;
+            else:
+            ?>
+                <div class="stat-item fade-in delay-1">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <h3><span class="counter" data-target="500" data-suffix="+">0</span></h3>
+                    <p>Happy Members</p>
+                </div>
+                <div class="stat-item fade-in delay-2">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <h3><span class="counter" data-target="15" data-suffix="+">0</span></h3>
+                    <p>Certified Instructors</p>
+                </div>
+                <div class="stat-item fade-in delay-3">
+                    <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3><span class="counter" data-target="2000" data-suffix="+">0</span></h3>
+                    <p>Sessions Completed</p>
+                </div>
+                <div class="stat-item fade-in delay-4">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <h3><span class="counter" data-target="98" data-suffix="%">0</span></h3>
+                    <p>Satisfaction Rate</p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     WHY CHOOSE US
+     ============================================ -->
+<section class="section why-section" id="why-us">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="sub-title"><?php echo htmlspecialchars($settings['whyus_subtitle'] ?? 'Why Choose Us'); ?></span>
+            <h2><?php echo $settings['whyus_title'] ?? 'The Best Reasons to <span>Dive In</span>'; ?></h2>
+            <p><?php echo htmlspecialchars($settings['whyus_description'] ?? 'Discover why hundreds trust us as the top professional centre for meditation, mindfulness, and spiritual growth in Victoria.'); ?></p>
+        </div>
+
+        <div class="why-grid">
+            <?php
+            $features = getWhyFeatures();
+            if (!empty($features)):
+                $delay = 0;
+                foreach ($features as $feature):
+                    $delay++;
+            ?>
+                <div class="why-card fade-in delay-<?php echo $delay; ?>">
+                    <div class="why-card-icon">
+                        <i class="<?php echo htmlspecialchars($feature['icon'] ?? 'fas fa-star'); ?>"></i>
+                    </div>
+                    <h3><?php echo htmlspecialchars($feature['title']); ?></h3>
+                    <p><?php echo htmlspecialchars($feature['description']); ?></p>
+                </div>
+            <?php
+                endforeach;
+            else:
+            ?>
+                <div class="why-card fade-in delay-1">
+                    <div class="why-card-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <h3>Healthy Body</h3>
+                    <p>Achieve the best physical vitality through our top professional yoga and wellness programs that strengthen, rejuvenate, and energise your entire being.</p>
+                </div>
+                <div class="why-card fade-in delay-2">
+                    <div class="why-card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Calm Mind</h3>
+                    <p>Experience the best mental clarity and profound calm through our top professional meditation and mindfulness techniques practised daily.</p>
+                </div>
+                <div class="why-card fade-in delay-3">
+                    <div class="why-card-icon"><i class="fas fa-sun"></i></div>
+                    <h3>Spiritual Awakening</h3>
+                    <p>Awaken your spirit with the best professional guidance. Our top spiritual growth programs lead you to deeper self-understanding and higher consciousness.</p>
+                </div>
+                <div class="why-card fade-in delay-4">
+                    <div class="why-card-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h3>Better Relations</h3>
+                    <p>Build the best meaningful connections. Our top programs help you cultivate compassion, empathy, and professional communication for harmonious relationships.</p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CTA 2 SECTION
+     ============================================ -->
+<?php if (!empty($settings['cta2_title'])): ?>
+<section class="cta-section cta-alt">
+    <div class="container">
+        <div class="cta-alt-content">
+            <?php if (!empty($settings['cta2_subtitle'])): ?>
+                <span class="sub-title"><?php echo htmlspecialchars($settings['cta2_subtitle']); ?></span>
+            <?php endif; ?>
+            <h2><?php echo $settings['cta2_title']; ?></h2>
+            <?php if (!empty($settings['cta2_description'])): ?>
+                <p><?php echo htmlspecialchars($settings['cta2_description']); ?></p>
+            <?php endif; ?>
+            <?php if (!empty($settings['cta2_btn_text'])): ?>
+                <a href="<?php echo htmlspecialchars($settings['cta2_btn_link'] ?? SITE_URL . '/contact'); ?>" class="btn btn-primary"><?php echo htmlspecialchars($settings['cta2_btn_text']); ?></a>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- ============================================
+     QUOTE / PARALLAX SECTION
+     ============================================ -->
+<section class="quote-section">
+    <div class="quote-bg">
+        <?php if (!empty($settings['quote_bg_image'])): ?>
+            <img src="<?php echo SITE_URL . '/' . htmlspecialchars($settings['quote_bg_image']); ?>" alt="Quote Background">
+        <?php else: ?>
+            <div class="placeholder-img placeholder-mixed"></div>
+        <?php endif; ?>
+    </div>
+    <div class="quote-overlay"></div>
+    <div class="container">
+        <div class="quote-icon fade-in">
+            <i class="fas fa-quote-left"></i>
+        </div>
+        <blockquote class="fade-in">
+            "<?php echo htmlspecialchars($settings['quote_text'] ?? 'To know the ocean, jump into the ocean.'); ?>"
+        </blockquote>
+        <p class="quote-author fade-in">— <?php echo htmlspecialchars($settings['quote_author'] ?? 'Ancient Wisdom for Modern Seekers'); ?></p>
+        <a href="<?php echo htmlspecialchars($settings['quote_btn_link'] ?? SITE_URL . '/contact'); ?>" class="btn btn-outline fade-in"><?php echo htmlspecialchars($settings['quote_btn_text'] ?? 'Interested to Dive In? Join Us Now'); ?> <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS SECTION
+     ============================================ -->
+<section class="section testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="sub-title"><?php echo htmlspecialchars($settings['testimonials_subtitle'] ?? 'Testimonials'); ?></span>
+            <h2><?php echo $settings['testimonials_title'] ?? 'What Our <span>Members</span> Say'; ?></h2>
+            <p><?php echo htmlspecialchars($settings['testimonials_description'] ?? 'Hear from our community about their transformative experiences and how our best professional programs changed their lives.'); ?></p>
+        </div>
+
+        <div class="testimonials-grid">
+            <?php
+            $testimonials = getActiveTestimonials();
+            if (!empty($testimonials)):
+                $delay = 0;
+                $colors = ['var(--primary)', 'var(--secondary)', 'var(--primary-light)', 'var(--secondary-dark)'];
+                foreach ($testimonials as $testimonial):
+                    $delay = ($delay % 3) + 1;
+                    $color = $colors[($delay - 1) % count($colors)];
+                    $rating = isset($testimonial['rating']) ? (int)$testimonial['rating'] : 5;
+            ?>
+                <div class="testimonial-card fade-in delay-<?php echo $delay; ?>">
+                    <div class="testimonial-stars">
+                        <?php for ($i = 0; $i < $rating; $i++): ?>
+                            <i class="fas fa-star"></i>
+                        <?php endfor; ?>
+                        <?php for ($i = $rating; $i < 5; $i++): ?>
+                            <i class="far fa-star"></i>
+                        <?php endfor; ?>
+                    </div>
+                    <p>"<?php echo htmlspecialchars($testimonial['content']); ?>"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <?php if (!empty($testimonial['image'])): ?>
+                                <img src="<?php echo SITE_URL . '/' . htmlspecialchars($testimonial['image']); ?>" alt="<?php echo htmlspecialchars($testimonial['name']); ?>">
+                            <?php else: ?>
+                                <div class="testimonial-avatar-placeholder" style="background: <?php echo $color; ?>;"><?php echo strtoupper(substr($testimonial['name'], 0, 1)); ?></div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4><?php echo htmlspecialchars($testimonial['name']); ?></h4>
+                            <span><?php echo htmlspecialchars($testimonial['designation'] ?? ''); ?></span>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                endforeach;
+            else:
+            ?>
+                <!-- Fallback testimonials -->
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Dive Into Yourself is the best meditation centre I have ever been to. The professional instructors truly helped me find inner peace and clarity."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <div class="testimonial-avatar-placeholder" style="background: var(--primary);">S</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Mitchell</h4>
+                            <span>Yoga Practitioner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best holistic therapy sessions here are truly transformative. The professional team creates a safe and nurturing space."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <div class="testimonial-avatar-placeholder" style="background: var(--secondary);">R</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Raj Patel</h4>
+                            <span>Mindfulness Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in delay-3">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"I joined the best inner peace workshop and it completely changed my perspective on life. A sense of calm and purpose I never knew existed."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <div class="testimonial-avatar-placeholder" style="background: var(--primary-light);">E</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Emma Thompson</h4>
+                            <span>Wellness Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<?php include __DIR__ . '/includes/footer.php'; ?>
