@@ -48,6 +48,9 @@ $site_address = $settings['address'] ?? '';
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>/css/style.css">
+    <?php if (($page_slug ?? '') === 'home'): ?>
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/css/home.css">
+    <?php endif; ?>
 
     <!-- Schema Markup -->
     <script type="application/ld+json">

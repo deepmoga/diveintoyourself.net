@@ -18,37 +18,37 @@ include __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<main class="new-home">
-    <section class="home-services-section services-page-new">
+<main class="inner-clean-page">
+    <section class="section services-page-new">
         <div class="container">
-            <div class="home-section-heading">
-                <span class="home-kicker">Services</span>
+            <div class="section-header">
+                <span class="sub-title">Services</span>
                 <h2>Personal Support for Inner and Outer Wellbeing</h2>
                 <p>Explore practical, grounded sessions for self-understanding, calm, movement, and personal growth.</p>
             </div>
 
-            <div class="home-services-grid">
-                <div class="home-service-card">
+            <div class="services-clean-grid">
+                <div class="service-clean-card">
                     <i class="fas fa-comments"></i>
                     <h3>Personal Counselling</h3>
                     <p>Supportive one-on-one conversations to understand yourself, your emotions, and your relationships with more clarity.</p>
                 </div>
-                <div class="home-service-card">
+                <div class="service-clean-card">
                     <i class="fas fa-wind"></i>
                     <h3>Breathing & Meditation Practices</h3>
                     <p>Simple, steady practices designed to calm the nervous system, sharpen awareness, and create inner quiet.</p>
                 </div>
-                <div class="home-service-card">
+                <div class="service-clean-card">
                     <i class="fas fa-spa"></i>
                     <h3>Yoga Training Sessions</h3>
                     <p>Guided yoga sessions focused on flexibility, balance, strength, posture, and mindful movement.</p>
                 </div>
-                <div class="home-service-card">
+                <div class="service-clean-card">
                     <i class="fas fa-dumbbell"></i>
                     <h3>One-on-One Personal Training</h3>
                     <p>Personalized fitness and movement guidance tailored to your body, comfort level, and long-term wellbeing.</p>
                 </div>
-                <div class="home-service-card featured">
+                <div class="service-clean-card featured">
                     <i class="fas fa-video"></i>
                     <h3>Online Personal Counselling, Meditation & Yoga Classes</h3>
                     <p>Flexible online sessions for people who want personal guidance from home or while travelling.</p>
