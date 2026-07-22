@@ -66,9 +66,11 @@ $settings = getAllSettings();
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <?php foreach (getActiveServices(5) as $fs): ?>
-                            <li><a href="<?php echo SITE_URL . '/service/' . htmlspecialchars($fs['slug'] ?? generateSlug($fs['title'])); ?>"><?php echo htmlspecialchars($fs['title']); ?></a></li>
-                        <?php endforeach; ?>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Personal Counselling</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Breathing & Meditation Practices</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Yoga Training Sessions</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">One-on-One Personal Training</a></li>
+                        <li><a href="<?php echo SITE_URL; ?>/services">Online Personal Counselling, Meditation & Yoga Classes</a></li>
                     </ul>
                 </div>
 
